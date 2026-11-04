@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153d3b">
+    <meta name="description" content="Registre suas viagens e guarde cada memória no seu diário de bordo.">
+    <title>Diário de Bordo</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./icons/icon-192.png" type="image/png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Diário de Bordo — início">
+        <img src="./icons/icon-192.png" alt="" width="44" height="44">
+        <span>Diário de <strong>Bordo</strong></span>
+      </a>
+      <button class="install-button" id="install-button" type="button" hidden>Instalar aplicativo</button>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">SUAS HISTÓRIAS, SEMPRE COM VOCÊ</p>
+        <h1 id="page-title">Um lugar para cada <span>caminho.</span></h1>
+        <p class="intro-copy">Guarde os detalhes, as descobertas e os momentos que fazem cada jornada valer a pena.</p>
+        <div class="offline-note"><span class="status-dot" aria-hidden="true"></span> Suas memórias ficam salvas neste dispositivo.</div>
+      </section>
+
+      <div class="content-grid">
+        <section class="form-panel panel" aria-labelledby="form-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">NOVA MEMÓRIA</p>
+              <h2 id="form-title">Como foi sua jornada?</h2>
+            </div>
+            <span class="heading-mark" aria-hidden="true">✳</span>
+          </div>
+          <form id="entry-form">
+            <label for="entry-title">Título</label>
+            <input id="entry-title" name="title" type="text" maxlength="100" placeholder="Ex.: Um fim de semana na serra" required>
+
+            <label for="entry-description">Descrição</label>
+            <textarea id="entry-description" name="description" rows="5" maxlength="3000" placeholder="Conte um pouco sobre esse momento..." required></textarea>
+
+            <label for="entry-date">Data da jornada</label>
+            <input id="entry-date" name="date" type="date" required>
+
+            <button class="submit-button" type="submit"><span aria-hidden="true">＋</span> Guardar memória</button>
+          </form>
+          <p class="storage-message" id="storage-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="entries-section" aria-labelledby="entries-title">
+          <div class="entries-heading">
+            <div>
+              <p class="eyebrow">SEU CAMINHO ATÉ AQUI</p>
+              <h2 id="entries-title">Memórias <span class="entry-count" id="entry-count">0</span></h2>
+            </div>
+          </div>
+          <div class="entries-list" id="entries-list" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+    <footer>Feito para acompanhar você, com ou sem conexão.</footer>
+  </body>
+</html>
